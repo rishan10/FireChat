@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DBBBA8891F62780700B88BC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBA8881F62780700B88BC5 /* AppDelegate.swift */; };
-		DBBBA88B1F62780700B88BC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBA88A1F62780700B88BC5 /* ViewController.swift */; };
+		DBBBA88B1F62780700B88BC5 /* FireChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBA88A1F62780700B88BC5 /* FireChatViewController.swift */; };
 		DBBBA88E1F62780700B88BC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBBA88C1F62780700B88BC5 /* Main.storyboard */; };
 		DBBBA8901F62780700B88BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBBA88F1F62780700B88BC5 /* Assets.xcassets */; };
 		DBBBA8931F62780700B88BC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBBA8911F62780700B88BC5 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		DBBBA8851F62780700B88BC5 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBBA8881F62780700B88BC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBBBA88A1F62780700B88BC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBBBA88A1F62780700B88BC5 /* FireChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireChatViewController.swift; sourceTree = "<group>"; };
 		DBBBA88D1F62780700B88BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBBBA88F1F62780700B88BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBBBA8921F62780700B88BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBBA8881F62780700B88BC5 /* AppDelegate.swift */,
-				DBBBA88A1F62780700B88BC5 /* ViewController.swift */,
+				DBBBA88A1F62780700B88BC5 /* FireChatViewController.swift */,
 				DBBBA88C1F62780700B88BC5 /* Main.storyboard */,
 				DBBBA88F1F62780700B88BC5 /* Assets.xcassets */,
 				DBBBA8911F62780700B88BC5 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBBBA88B1F62780700B88BC5 /* ViewController.swift in Sources */,
+				DBBBA88B1F62780700B88BC5 /* FireChatViewController.swift in Sources */,
 				DBBBA8891F62780700B88BC5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
