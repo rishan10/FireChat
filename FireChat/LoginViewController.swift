@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import UIKit
+import JSQMessagesViewController
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,16 +18,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBAction func onSubmit(_ sender: Any) {
-        if emailTextField.text != "" || passwordTextField.text != "" {
+        if emailTextField.text != "" && passwordTextField.text != "" {
             if segmentedControl.selectedSegmentIndex == 0 { //Login
                 
                 FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                     if user != nil {
+                        
                         self.performSegue(withIdentifier: "loginToNav", sender: self)
                     }else if let myError = error?.localizedDescription {
-                        print(myError)
+                        self.createAlert(title: "ERROR", message: myError)
                     }else{
-                        print("ERROR")
+                        self.createAlert(title: "ERROR", message: "There was an unknown error")
                     }
                 })
             }else if segmentedControl.selectedSegmentIndex == 1 { //Signup
@@ -36,9 +38,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if user != nil {
                         self.performSegue(withIdentifier: "loginToNav", sender: self)
                     }else if let myError = error?.localizedDescription {
-                        print(myError)
+                        self.createAlert(title: "ERROR", message: myError)
                     }else{
-                        print("ERROR")
+                        self.createAlert(title: "ERROR", message: "There was an unknown error")
                     }
 
                     
@@ -47,6 +49,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
+    
+    func createAlert (title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        //CREATING ON BUTTON
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -62,5 +79,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//    }
 }
 

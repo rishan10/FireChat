@@ -12,6 +12,6 @@ import Firebase
 struct Constants {
     struct refs {
         static let databaseRoot = FIRDatabase.database().reference()
-        static let databaseChild = databaseRoot.child("chats")
+        static let databaseChats = databaseRoot.child("chats")
     }
 }

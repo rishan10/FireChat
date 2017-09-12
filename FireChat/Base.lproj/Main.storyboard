@@ -9,29 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fire Chat View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="FireChatViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eht-ch-rvV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="dsO-ZQ-ZNR">
             <objects>
-                <viewController id="HGZ-fH-52p" customClass="LoginViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreen" id="HGZ-fH-52p" customClass="LoginViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eTL-nf-AVz"/>
                         <viewControllerLayoutGuide type="bottom" id="UBb-On-d4W"/>
@@ -54,14 +35,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-MO-G6g">
-                                <rect key="frame" x="163" y="349" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="onSubmit:" destination="HGZ-fH-52p" eventType="touchUpInside" id="7Fj-fX-dZb"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5SS-II-sJ0">
                                 <rect key="frame" x="137" y="158" width="115" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -70,6 +43,14 @@
                                     <segment title="Signup"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7l-AT-gtG">
+                                <rect key="frame" x="163" y="347" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmit:" destination="HGZ-fH-52p" eventType="touchUpInside" id="k4x-b7-cDn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -77,31 +58,58 @@
                         <outlet property="emailTextField" destination="Rfs-nS-y3Y" id="GoC-D2-Bg2"/>
                         <outlet property="passwordTextField" destination="3Eg-nQ-jAY" id="tPI-yg-t3X"/>
                         <outlet property="segmentedControl" destination="5SS-II-sJ0" id="KJO-Rl-Qwi"/>
-                        <outlet property="submitButton" destination="Hft-MO-G6g" id="BP4-Sc-6Eb"/>
-                        <segue destination="hqy-G9-6lI" kind="show" identifier="loginToNav" id="lgH-XT-GXw"/>
+                        <outlet property="submitButton" destination="R7l-AT-gtG" id="ydc-yj-AGQ"/>
+                        <segue destination="teB-CO-ddj" kind="show" identifier="loginToNav" id="azv-uz-XFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OA-Zc-Iw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-535.20000000000005" y="142.57871064467767"/>
+            <point key="canvasLocation" x="-545" y="143"/>
+        </scene>
+        <!--Fire Chat View Controller-->
+        <scene sceneID="Ja4-Jq-F4N">
+            <objects>
+                <viewController id="BnA-zM-9Hl" customClass="FireChatViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Vo-0P-gPc"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbh-Tb-Vdx"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.0" contentMode="scaleToFill" id="xUr-Xp-2w6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.3874684290550241" green="0.3847118404330005" blue="0.4046240482233503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="aoq-zF-oF6">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="klk-ww-p8i">
+                            <connections>
+                                <action selector="onLogOut:" destination="BnA-zM-9Hl" id="cOy-Vr-aFY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4V-Zf-hKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="142.57871064467767"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qtW-4a-r1E">
+        <scene sceneID="Fy9-aR-5Za">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hqy-G9-6lI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="teB-CO-ddj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ane-rZ-qY0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dwq-7e-s9A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="djF-HR-XOJ"/>
+                        <segue destination="BnA-zM-9Hl" kind="relationship" relationship="rootViewController" id="f3q-fq-6pc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pTX-xw-MyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RG-2Q-10I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="137"/>
+            <point key="canvasLocation" x="232.80000000000001" y="142.57871064467767"/>
         </scene>
     </scenes>
 </document>
