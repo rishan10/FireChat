@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submitButton: UIButton!
     @IBAction func onSubmit(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
+            emailTextField.text = emailTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             if segmentedControl.selectedSegmentIndex == 0 { //Login
                 
                 FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in

@@ -50,6 +50,7 @@ class FireChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
 
@@ -78,6 +79,8 @@ class FireChatViewController: JSQMessagesViewController {
         })
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         senderId = FIRAuth.auth()?.currentUser?.uid
         senderDisplayName = FIRAuth.auth()?.currentUser?.email
@@ -89,40 +92,7 @@ class FireChatViewController: JSQMessagesViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func showDisplayNameDialog()
-    {
-        let defaults = UserDefaults.standard
-        
-        let alert = UIAlertController(title: "Your Display Name", message: "Before you can chat, please choose a display name. Others will see this name when you send chat messages. You can change your display name again by tapping the navigation bar.", preferredStyle: .alert)
-        
-        alert.addTextField { textField in
-            
-            if let name = defaults.string(forKey: "jsq_name")
-            {
-                textField.text = name
-            }
-            else
-            {
-                let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
-                textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
-            }
-        }
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self, weak alert] _ in
-            
-            if let textField = alert?.textFields?[0], !textField.text!.isEmpty {
-                
-                self?.senderDisplayName = textField.text
-                
-                self?.title = "Chat: \(self!.senderDisplayName!)"
-                
-                defaults.set(textField.text, forKey: "jsq_name")
-                defaults.synchronize()
-            }
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
+
     
    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
